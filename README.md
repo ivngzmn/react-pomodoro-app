@@ -1,1 +1,1 @@
-# react-pomodoro-app
+# Pomodoro App made with React
