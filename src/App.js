@@ -1,10 +1,10 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./styles/tailwind.css";
 
 export default function App() {
   return (
-    <div className="app">
-      <h2>Pomodoro!</h2>
+    <div className="app h-screen flex-none flex-col items-center justify-center bg-green-500">
+      <h2 className="text-4xl text-center mb-3">Pomodoro!</h2>
 
       <div className="timer">
         <span>00</span>
