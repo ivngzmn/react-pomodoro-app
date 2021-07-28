@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./styles/tailwind.css";
 
 function padTime(time) {
@@ -8,17 +8,40 @@ function padTime(time) {
 export default function App() {
   const [title, setTitle] = useState("Let the countdown begin!!!");
   const [timeLeft, setTimeLeft] = useState(25 * 60);
+  const [isRunning, setIsRunning] = useState(false);
+  const intervalRef = useRef(null);
+
   const minutes = padTime(Math.floor(timeLeft / 60));
   const seconds = padTime(timeLeft - minutes * 60);
   function startTimer() {
-    setInterval(() => {
+    if (intervalRef.current != null) return;
+    setTitle("Let's go!!! 🚀");
+    setIsRunning(true);
+    intervalRef.current = setInterval(() => {
       setTimeLeft((timeLeft) => {
         if (timeLeft >= 1) return timeLeft - 1;
 
         //reset timer
+        resetTimer();
         return 0;
       });
     }, 1000);
+  }
+
+  function stopTimer() {
+    if (intervalRef.current === null) return;
+    clearInterval(intervalRef.current);
+    intervalRef.current = null;
+    setTitle("Keep going strong!!! 💪🏽");
+    setIsRunning(false);
+  }
+
+  function resetTimer() {
+    clearInterval(intervalRef.current);
+    intervalRef.current = null;
+    setTitle("Ready for another round? 🤔");
+    setTimeLeft(25 * 60);
+    setIsRunning(false);
   }
 
   return (
@@ -37,20 +60,26 @@ export default function App() {
           </div>
 
           <span className="buttons relative z-0 inline-flex shadow-sm rounded-md mt-3 font-mono ">
+            {!isRunning && (
+              <button
+                onClick={startTimer}
+                type="button"
+                className="relative inline-flex items-center px-4 py-2 rounded-l-md border border-gray-300 bg-indigo-700 text-sm font-medium text-indigo-100 hover:bg-purple-800 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
+              >
+                Start
+              </button>
+            )}
+            {isRunning && (
+              <button
+                onClick={stopTimer}
+                type="button"
+                className="-ml-px relative inline-flex items-center px-4 py-2 rounded-l-md border border-gray-300 bg-indigo-700 text-sm font-medium text-indigo-100 hover:bg-purple-800 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
+              >
+                Stop
+              </button>
+            )}
             <button
-              onClick={startTimer}
-              type="button"
-              className="relative inline-flex items-center px-4 py-2 rounded-l-md border border-gray-300 bg-indigo-700 text-sm font-medium text-indigo-100 hover:bg-purple-800 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
-            >
-              Start
-            </button>
-            <button
-              type="button"
-              className="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-indigo-700 text-sm font-medium text-indigo-100 hover:bg-purple-800 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
-            >
-              Stop
-            </button>
-            <button
+              onClick={resetTimer}
               type="button"
               className="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-gray-300 bg-indigo-700 text-sm font-medium text-indigo-100 hover:bg-purple-800 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
             >
