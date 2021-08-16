@@ -10,8 +10,17 @@ The Pomodoro Technique is a time management method developed by Francesco Cirill
 
 **Tech used:** Tailwind, React
 
-I have been learning about different studying techniques on how to focus and the pomodoro technique is one that I truly love. I started to build the app in react and was using regular CSS but I had heard of Tailwind being easier to build prototypes fast. I went ahead and began adding Tailwind to the project. Now it was not easy but after a few google searches I was able to get Tailwind to work in compatibility mode until React is able to handle the most recent iteration of Tailwind CSS. Once Tailwind CSS was ready, I was off to the races. Now that the app functionality is done my next step is to add some sound when the timer goes off.
+I have been learning about different studying techniques on how to focus and the Pomodoro technique is one that I truly love. I started to build the app in React and was using regular CSS but I had heard of Tailwind being easier to build prototypes fast. I went ahead and began adding Tailwind to the project. Now it was not easy but after a few google searches, I was able to get Tailwind to work in compatibility mode until React is able to handle the most recent iteration of Tailwind CSS. Once Tailwind CSS was ready, I was off to the races. Now that the app functionality is done my next step is to add some sound when the timer goes off.
 
 ## Lessons Learned:
 
-When working with this project I had just began to work with Node and now I have a better understanding on how package dependencies work. I have grown to love Yarn as it just makes life easier. Moving forward I will make a boilerplate for my React apps to include Tailwind CSS.
+When working with this project I had just begun to work with Node and now I have a better understanding of how to package dependencies work. I have grown to love Yarn as it just makes life easier. Moving forward I will make a boilerplate for my React apps to include Tailwind CSS.
+
+## Examples:
+
+Take a look at these couple examples that I have in my own portfolio:
+**Markdown Editor:** https://github.com/ivngzmn/react-markdown-editor
+
+**ToDo list:** https://github.com/ivngzmn/todo-microsoft-auth-mvc
+
+**Rock Paper Scissors Game:** https://github.com/ivngzmn/TOP-Rock-Paper-Scissors
