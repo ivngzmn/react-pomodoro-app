@@ -48,10 +48,10 @@ export default function App() {
     <div className="app min-h-screen flex flex-col items-center justify-center text-center bg-gradient-to-r from-blue-400 to-purple-400 leading-6 px-8">
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-10 border border-gray-200 py-8 px-4 rounded sm:rounded-lg shadow-2xl">
-          <h1 className="text-6xl text-indigo-100 mb-5 font-mono">
+          <h1 className="text-7xl text-indigo-100 mb-5 font-thin">
             Pomodoro Focus
           </h1>
-          <h2 className="text-2xl text-indigo-100 mb-5 font-mono">{title}</h2>
+          <h2 className="text-2xl text-indigo-100 mb-5 font-medium">{title}</h2>
 
           <div className="timer text-7xl text-indigo-100 mb-3 font-mono">
             <span>{minutes}</span>
