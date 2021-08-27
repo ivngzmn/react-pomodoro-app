@@ -19,6 +19,7 @@ When working with this project I had just begun to work with Node and now I have
 ## Examples:
 
 Take a look at these couple examples that I have in my own portfolio:
+
 **📝 Markdown Editor:** https://github.com/ivngzmn/react-markdown-editor
 
 **🧾 ToDo list:** https://github.com/ivngzmn/todo-microsoft-auth-mvc
